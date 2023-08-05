@@ -128,7 +128,7 @@ Java.perform(function () {
     try {
         // okhttp3.CertificatePinner.check(str)
         hookClassMethod('okhttp3.CertificatePinner', 'check', function (thisObject, thisMethod, allArguments) {
-            console.log('[!] 拦截到 okhttp3: ' + allArguments[0]);
+            console.log('[!] 拦截到 okhttp3.CertificatePinner check() 方法: ' + allArguments[0]);
             return;
         });
         console.log('[+] 已 hook okhttp3 pinning')
@@ -140,7 +140,7 @@ Java.perform(function () {
     try {
         // com.datatheorem.android.trustkit.pinning.OkHostnameVerifier.verify(str) {
         hookClassMethod("com.datatheorem.android.trustkit.pinning.OkHostnameVerifier", "verify", function (thisObject, thisMethod, allArguments) {
-            console.log('[!] 拦截到 trustkit{1}: ' + allArguments[0]);
+            console.log('[!] 拦截到 trustkit verify() 方法: ' + allArguments[0]);
             return true;
         });
         console.log('[+] 已 hook trustkit pinning')
@@ -152,7 +152,7 @@ Java.perform(function () {
     try {
         // com.android.org.conscrypt.TrustManagerImpl.verifyChain(untrustedChain, trustAnchorChain, host, clientAuth, ocspData, tlsSctData)
         hookClassMethod('com.android.org.conscrypt.TrustManagerImpl', 'verifyChain', function (thisObject, thisMethod, allArguments) {
-            console.log('[!] 拦截到 TrustManagerImp: ' + allArguments[2]);
+            console.log('[!] 拦截到 TrustManagerImp verifyChain() 方法: ' + allArguments[2]);
             return allArguments[0];
         });
         console.log('[+] 已 hook TrustManagerImpl pinning')
@@ -164,7 +164,7 @@ Java.perform(function () {
     try {
         // appcelerator.https.PinningTrustManager.checkServerTrusted()
         hookClassMethod('appcelerator.https.PinningTrustManager', 'checkServerTrusted', function (thisObject, thisMethod, allArguments) {
-            console.log('[!] 拦截到 Appcelerator');
+            console.log('[!] 拦截到 Appcelerator checkServerTrusted() 方法');
         });
         console.log('[+] 已 hook Appcelerator pinning')
     } catch (err) {
