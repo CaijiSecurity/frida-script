@@ -1,5 +1,6 @@
-// start with:
-//   frida -U -l ssl-unpinning.js -f [APP_ID] --no-pause
+// 用法
+//   frida -U -f [AppPackageName] --no-pause -l sslUnpinning.js
+// 或者自行查看frida的用法
 
 // 记录某个类的子类是否已经枚举并 hook，如果已经hook就不再重复尝试 hook
 var hookedClassMethod = []
