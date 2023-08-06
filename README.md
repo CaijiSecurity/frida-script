@@ -14,7 +14,7 @@ frida -U -F --no-pause -l sslUnpinning.js
 
 ### 描述
 用于绕过 SSL Pinning，作用和 JustTrustMe 一样  
-在脚本基础上修改 [https://www.jianshu.com/p/f07ad151a163](https://www.jianshu.com/p/f07ad151a163)  
+在此脚本基础上修改 [https://www.jianshu.com/p/f07ad151a163](https://www.jianshu.com/p/f07ad151a163)  
 主要增加了对 `WebViewClient` 的 `onReceivedSslError` 方法的 hook  
 以及尝试对继承了 WebViewClient 的子类的查找和 hook  
 
